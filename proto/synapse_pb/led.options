@@ -1,0 +1,4 @@
+synapse_pb.LED.index int_size:IS_8
+synapse_pb.LED.r int_size:IS_8
+synapse_pb.LED.g int_size:IS_8
+synapse_pb.LED.b int_size:IS_8

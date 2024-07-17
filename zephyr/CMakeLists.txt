@@ -1,18 +1,18 @@
 # SPDX-License-Identifier: Apache-2.0
-if (CONFIG_SYNAPSE_PROTOBUF)
+if (CONFIG_SYNAPSE_PB)
 
 list(APPEND CMAKE_MODULE_PATH ${ZEPHYR_BASE}/modules/nanopb)
 include(nanopb)
 
-set(SYNAPSE_PROTOBUF_DIR ${ZEPHYR_CURRENT_MODULE_DIR})
-set(PROTO_DIR ${SYNAPSE_PROTOBUF_DIR}/proto)
+set(SYNAPSE_PB_DIR ${ZEPHYR_CURRENT_MODULE_DIR})
+set(PROTO_DIR ${SYNAPSE_PB_DIR}/proto/synapse_pb)
  
 file(GLOB OPTION_FILES "${PROTO_DIR}/*.option")
    
-set(NANOPB_IMPORT_DIRS "${PROTO_DIR}")
-set(NANOPB_OPTIONS "-I${CMAKE_SOURCE_DIR}")
+set(NANOPB_IMPORT_DIRS "${SYNAPSE_PB_DIR}/proto")
+set(NANOPB_OPTIONS "-I${CMAKE_SOURCE_DIR}/proto")
 
-zephyr_library_named(synapse_protobuf)
+zephyr_library_named(synapse_pb)
 
 # sorted in dependency order
 set(PROTO_FILES
@@ -49,19 +49,19 @@ set(PROTO_FILES
     )
 
 foreach(FILE ${PROTO_FILES})
-  zephyr_nanopb_sources(synapse_protobuf ${FILE})
+  zephyr_nanopb_sources(synapse_pb ${FILE})
 endforeach()
 
 # we need to be able to include generated header files
 zephyr_library_include_directories(
-  ${CMAKE_CURRENT_BINARY_DIR}/../
+  ${CMAKE_CURRENT_BINARY_DIR}/../proto
 )
 
 zephyr_include_directories(
-  ${CMAKE_CURRENT_BINARY_DIR}/../
+  ${CMAKE_CURRENT_BINARY_DIR}/../proto
 )
 
 # necessary for module to calll nanopb_generate
-add_dependencies(app synapse_protobuf)
+add_dependencies(app synapse_pb)
 
 endif()

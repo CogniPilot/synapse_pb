@@ -1,0 +1,2 @@
+synapse_pb.Pwm.channel max_count:16
+synapse_pb.Pwm.channel int_size:IS_16

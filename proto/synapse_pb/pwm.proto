@@ -1,0 +1,6 @@
+syntax = "proto3";
+package synapse_pb;
+
+message Pwm {
+	repeated uint32 channel = 1;
+}

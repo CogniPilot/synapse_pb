@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: Apache-2.0
-config SYNAPSE_PROTOBUF
+config SYNAPSE_PB
         bool "Synapse Protobuf Support"
         depends on NANOPB
         help
           This option enables the Synapse Protobuf library.
 
-if SYNAPSE_PROTOBUF
+if SYNAPSE_PB
 
 endif
 

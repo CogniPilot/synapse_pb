@@ -1,0 +1,3 @@
+synapse_pb.Actuators.position max_count:16
+synapse_pb.Actuators.velocity max_count:16
+synapse_pb.Actuators.normalized max_count:16

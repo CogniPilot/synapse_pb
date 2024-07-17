@@ -1,0 +1,10 @@
+syntax = "proto3";
+package synapse_pb;
+
+import "synapse_pb/point.proto";
+import "synapse_pb/quaternion.proto";
+
+message Pose {
+	Point position = 1;
+	Quaternion orientation = 2;
+}

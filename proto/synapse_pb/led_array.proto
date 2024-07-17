@@ -1,0 +1,11 @@
+syntax = "proto3";
+package synapse_pb;
+
+import "synapse_pb/header.proto";
+import "synapse_pb/led.proto";
+
+message LEDArray
+{
+  Header header = 1;
+  repeated LED led = 2;
+}

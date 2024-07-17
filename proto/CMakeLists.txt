@@ -1,44 +1,49 @@
 set(PROTO_FILES
-    frame.proto
-    actuators.proto
-    altimeter.proto
-    battery_state.proto
-    bezier_curve.proto
-    bezier_trajectory.proto
-    bit32_flag.proto
-    can.proto
-    header.proto
-    imu.proto
-    input.proto
-    led.proto
-    led_array.proto
-    magnetic_field.proto
-    nav_sat_fix.proto
-    nav_sat_status.proto
-    odometry.proto
-    point.proto
-    pose.proto
-    pose_with_covariance.proto
-    pwm.proto
-    quaternion.proto
-    safety.proto
-    sim_clock.proto
-    status.proto
-    time.proto
-    twist.proto
-    twist_with_covariance.proto
-    vector3.proto
-    wheel_odometry.proto
+    synapse_pb/frame.proto
+    synapse_pb/actuators.proto
+    synapse_pb/altimeter.proto
+    synapse_pb/battery_state.proto
+    synapse_pb/bezier_curve.proto
+    synapse_pb/bezier_trajectory.proto
+    synapse_pb/bit32_flag.proto
+    synapse_pb/can.proto
+    synapse_pb/header.proto
+    synapse_pb/imu.proto
+    synapse_pb/input.proto
+    synapse_pb/led.proto
+    synapse_pb/led_array.proto
+    synapse_pb/magnetic_field.proto
+    synapse_pb/nav_sat_fix.proto
+    synapse_pb/nav_sat_status.proto
+    synapse_pb/odometry.proto
+    synapse_pb/point.proto
+    synapse_pb/pose.proto
+    synapse_pb/pose_with_covariance.proto
+    synapse_pb/pwm.proto
+    synapse_pb/quaternion.proto
+    synapse_pb/safety.proto
+    synapse_pb/sim_clock.proto
+    synapse_pb/status.proto
+    synapse_pb/time.proto
+    synapse_pb/twist.proto
+    synapse_pb/twist_with_covariance.proto
+    synapse_pb/vector3.proto
+    synapse_pb/wheel_odometry.proto
     )
 
 set(PROTO_SRCS)
 set(PROTO_HDRS)
 
+set(IMPORT_DIRS "${CMAKE_CURRENT_SOURCE_DIR}")
+message(STATUS "import dirs: ${IMPORT_DIRS}")
+
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/synapse_pb)
+
 protobuf_generate(
-    APPEND_PATH
+    PROTOC_OUT_DIR "${CMAKE_CURRENT_BINARY_DIR}"
     LANGUAGE cpp
     OUT_VAR outvar
-    IMPORT_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/../..
+    IMPORT_DIRS ${IMPORT_DIRS}
     PROTOS ${PROTO_FILES})
 
 foreach(_file ${outvar})
@@ -63,7 +68,7 @@ ament_target_dependencies(${PROJECT_NAME} Protobuf)
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/../..>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
         $<INSTALL_INTERFACE:include>)
 
 install(

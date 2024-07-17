@@ -1,0 +1,2 @@
+synapse_pb.Can.data max_count:64
+synapse_pb.Can.data int_size:IS_8

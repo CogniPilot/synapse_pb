@@ -1,0 +1,17 @@
+syntax = "proto3";
+package synapse_pb;
+
+import "synapse_pb/header.proto";
+import "synapse_pb/vector3.proto";
+
+message SnapSetpoint {
+	Header header = 1;
+	Vector3 postion = 2; 
+	Vector3 velocity = 3; 
+	Vector3 acceleration = 4; 
+	Vector3 jerk = 5; 
+	Vector3 snap = 6; 
+	double psi = 7;
+	double psi_dot = 8; 
+	double psi_ddot = 9; 
+}

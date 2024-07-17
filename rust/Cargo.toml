@@ -1,0 +1,16 @@
+[package]
+name = "synapse_pb"
+version = "0.1.6"
+edition = "2021"
+license = "Apache-2.0"
+description = "Protobuf messages for CogniPilot Synapse"
+homepaage = "www.cognipilot.com"
+repository = "https://github.com/CogniPilot/synapse_pb.git"
+readme = "README.md"
+
+[dependencies]
+bytes = "1.6.0"
+prost = "0.13.1"
+
+[build-dependencies]
+prost-build = "0.13.1"

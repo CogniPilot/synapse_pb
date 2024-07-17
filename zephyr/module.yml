@@ -1,4 +1,4 @@
-name: synapse_protobuf
+name: synapse_pb
 build:
   kconfig: zephyr/Kconfig
   cmake: zephyr

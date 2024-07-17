@@ -1,2 +1,0 @@
-synapse.msgs.Pwm.channel max_count:16
-synapse.msgs.Pwm.channel int_size:IS_16

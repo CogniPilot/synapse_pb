@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(synapse_protobuf)
+project(synapse_pb)
 
 find_package(ament_cmake REQUIRED)
 find_package(Protobuf REQUIRED)

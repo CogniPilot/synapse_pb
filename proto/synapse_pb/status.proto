@@ -1,0 +1,134 @@
+syntax = "proto3";
+package synapse_pb;
+
+import "synapse_pb/header.proto";
+
+message Status {
+
+	enum Arming {
+		ARMING_UNKNOWN=0;
+		ARMING_DISARMED=1;
+		ARMING_ARMED=2;
+	}
+
+	enum Fuel {
+		FUEL_UNKNOWN=0;
+		FUEL_CRITICAL=1;
+		FUEL_LOW=2;
+		FUEL_NOMINAL=3;
+		FUEL_OVER_CAPACITY=4;
+	}
+
+	enum LinkStatus {
+		STATUS_UNKNOWN=0;
+		STATUS_DISABLED=1;
+		STATUS_LOSS=2;
+		STATUS_NOMINAL=3;
+	}
+
+	// What is the input source (which can arm, change modes etc.)?
+	enum InputSource {
+		INPUT_SOURCE_UNKNOWN=0;
+		INPUT_SOURCE_RADIO_CONTROL=1;
+		INPUT_SOURCE_ETHERNET=2;
+		INPUT_SOURCE_CAN=3;
+		INPUT_SOURCE_RESERVED_0=4;
+		INPUT_SOURCE_RESERVED_1=5;
+		INPUT_SOURCE_RESERVED_2=6;
+		INPUT_SOURCE_RESERVED_3=7;
+	}
+
+	// What is the topic source?
+	// if it is input, it follows the input source
+	// mode command source
+	enum TopicSource {
+		TOPIC_SOURCE_UNKNOWN=0;
+		TOPIC_SOURCE_INPUT=1;
+		TOPIC_SOURCE_LOCAL=2;
+		TOPIC_SOURCE_ETHERNET=3;
+		TOPIC_SOURCE_CAN=4;
+		TOPIC_SOURCE_RESERVED_0=5;
+		TOPIC_SOURCE_RESERVED_1=6;
+		TOPIC_SOURCE_RESERVED_2=7;
+	}
+
+	// control mode is further subdivided by topic source
+	// if topic source is input, input is further
+	// subdivided by input source
+	enum Mode {
+		MODE_UNKNOWN=0;
+		MODE_CALIBRATION=1;
+		MODE_ACTUATORS=2; // raw actuator control
+		MODE_ATTITUDE_RATE=3; // raw throttle, att. rate feedback
+		MODE_ATTITUDE=4; // raw throttle, att. feeback
+		MODE_ALTITUDE=5; // throttle controls altitude, att. feedback
+		MODE_POSITION=6; // pos. feedback, sending waypoint
+		MODE_VELOCITY=7; // vel. feedback (cmd. vel) normal flight
+		MODE_ACCELERATION=8; // command acceleration
+		MODE_BEZIER=9; // send bezier trajectory to follow
+		MODE_RESERVED_0=10;
+		MODE_RESERVED_1=11;
+		MODE_RESERVED_2=12;
+		MODE_RESERVED_3=13;
+		MODE_RESERVED_4=14;
+		MODE_RESERVED_5=15;
+	}
+
+	enum Safety {
+		SAFETY_UNKNOWN=0;
+		SAFETY_SAFE=1;
+		SAFETY_UNSAFE=2;
+	}
+
+	enum Flag {
+		FLAG__=0;
+		FLAG_LIGHTING=1;
+		FLAG_RESERVED_0=2;
+		FLAG_RESERVED_1=4;
+		FLAG_RESERVED_2=8;
+		FLAG_RESERVED_3=16;
+		FLAG_RESERVED_4=32;
+		FLAG_RESERVED_5=64;
+		FLAG_RESERVED_6=128;
+		FLAG_RESERVED_7=256;
+		FLAG_RESERVED_8=512;
+		FLAG_RESERVED_9=1024;
+		FLAG_RESERVED_10=2048;
+		FLAG_RESERVED_11=4096;
+		FLAG_RESERVED_12=8192;
+		FLAG_RESERVED_13=16384;
+		FLAG_RESERVED_14=32768;
+		FLAG_RESERVED_15=65536;
+		FLAG_RESERVED_16=131072;
+		FLAG_RESERVED_17=262144;
+		FLAG_RESERVED_18=524288;
+		FLAG_RESERVED_19=1048576;
+		FLAG_RESERVED_20=2097152;
+		FLAG_RESERVED_21=4194304;
+		FLAG_RESERVED_22=8388608;
+		FLAG_RESERVED_23=16777216;
+		FLAG_RESERVED_24=33554432;
+		FLAG_RESERVED_25=67108864;
+		FLAG_RESERVED_26=134217728;
+		FLAG_RESERVED_27=268435456;
+		FLAG_RESERVED_28=536870912;
+		FLAG_RESERVED_29=1073741824;
+	}
+
+	Header header = 1;
+	Arming arming = 2;
+	string status_message = 3;
+	LinkStatus input_status = 4;
+	InputSource input_source = 5;
+	LinkStatus topic_status = 6;
+	TopicSource topic_source = 7;
+	LinkStatus electrode_status = 8;
+	Mode mode = 9;
+	Safety safety = 10;
+	Fuel fuel = 11;
+	uint32 fuel_percentage = 12;
+	float power = 13;
+	uint32 request_seq = 14;
+	bool request_rejected = 15;
+	fixed32 flag = 16;
+}

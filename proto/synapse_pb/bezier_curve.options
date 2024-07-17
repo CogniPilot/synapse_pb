@@ -1,0 +1,4 @@
+synapse_pb.BezierCurve.x max_count:8
+synapse_pb.BezierCurve.y max_count:8
+synapse_pb.BezierCurve.z max_count:8
+synapse_pb.BezierCurve.yaw max_count:8

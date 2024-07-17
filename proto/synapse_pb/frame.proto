@@ -1,0 +1,77 @@
+syntax = "proto3";
+package synapse_pb;
+
+import "synapse_pb/actuators.proto";
+import "synapse_pb/altimeter.proto";
+import "synapse_pb/battery_state.proto";
+import "synapse_pb/bezier_trajectory.proto";
+import "synapse_pb/can.proto";
+import "synapse_pb/imu.proto";
+import "synapse_pb/input.proto";
+import "synapse_pb/led_array.proto";
+import "synapse_pb/magnetic_field.proto";
+import "synapse_pb/nav_sat_fix.proto";
+import "synapse_pb/odometry.proto";
+import "synapse_pb/pose.proto";
+import "synapse_pb/pose_with_covariance.proto";
+import "synapse_pb/pwm.proto";
+import "synapse_pb/quaternion.proto";
+import "synapse_pb/safety.proto";
+import "synapse_pb/sim_clock.proto";
+import "synapse_pb/status.proto";
+import "synapse_pb/time.proto";
+import "synapse_pb/twist.proto";
+import "synapse_pb/twist_with_covariance.proto";
+import "synapse_pb/vector3.proto";
+import "synapse_pb/wheel_odometry.proto";
+
+enum Topic {
+	TOPIC_CMD_VEL=0;
+	TOPIC_ODOMETRY=1;
+	TOPIC_INPUT=2;
+	TOPIC_BEZIER_TRAJECTORY=3;
+	TOPIC_IMU=4;
+	TOPIC_MAGNETIC_FIELD=5;
+	TOPIC_NAV_SAT_FIX=6;
+	TOPIC_ALTIMETER=7;
+	TOPIC_ACTUATORS=8;
+	TOPIC_CLOCK_OFFSET=9;
+	TOPIC_BATTERY_STATE=10;
+	TOPIC_WHEEL_ODOMETRY=11;
+	TOPIC_LED_ARRAY=12;
+	TOPIC_STATUS=13;
+	TOPIC_SAFETY=14;
+	TOPIC_UPTIME=15;
+	TOPIC_SIM_CLOCK=63;
+}
+
+message Frame
+{
+	Topic topic = 1;
+	oneof msg
+	{
+		Actuators actuators = 2;
+		Altimeter alitimeter = 3;
+		BatteryState battery_state = 4;
+		BezierTrajectory bezier_trajectory = 5;
+		Can can = 6;
+		Imu imu = 7;
+		Input input = 8;
+		LEDArray led_array = 9;
+		MagneticField magnetic_field = 10;
+		NavSatFix nav_sat_fix = 11;
+		Odometry odometry = 12;
+		Pose pose = 13;
+		PoseWithCovariance pose_with_covariance = 14;
+		Pwm pwm = 15;
+		Quaternion quaternion = 16;
+		Safety safety = 17;
+		SimClock sim_clock = 18;
+		Status status = 19;
+		Time time = 20;
+		Twist twist = 21;
+		TwistWithCovariance twist_with_covariance = 22;
+		Vector3 vector3 = 23;
+		WheelOdometry wheel_odometry = 24;
+	}
+}

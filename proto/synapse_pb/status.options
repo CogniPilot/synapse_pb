@@ -1,0 +1,2 @@
+synapse_pb.Status.fuel_percentage int_size:IS_8
+synapse_pb.Status.status_message max_length:128

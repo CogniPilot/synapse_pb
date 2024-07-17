@@ -1,0 +1,9 @@
+syntax = "proto3";
+package synapse_pb;
+
+import "synapse_pb/header.proto";
+
+message WheelOdometry {
+	Header header = 1;
+	double rotation = 2;
+}

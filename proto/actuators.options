@@ -1,3 +1,0 @@
-synapse.msgs.Actuators.position max_count:16
-synapse.msgs.Actuators.velocity max_count:16
-synapse.msgs.Actuators.normalized max_count:16
