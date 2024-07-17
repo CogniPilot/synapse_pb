@@ -54,11 +54,11 @@ endforeach()
 
 # we need to be able to include generated header files
 zephyr_library_include_directories(
-  ${CMAKE_CURRENT_BINARY_DIR}/../proto
+  ${CMAKE_CURRENT_BINARY_DIR}/..
 )
 
 zephyr_include_directories(
-  ${CMAKE_CURRENT_BINARY_DIR}/../proto
+  ${CMAKE_CURRENT_BINARY_DIR}/..
 )
 
 # necessary for module to calll nanopb_generate
