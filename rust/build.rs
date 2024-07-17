@@ -40,8 +40,8 @@ fn main() -> std::io::Result<()> {
         "twist_with_covariance.proto",
         "vector3.proto",
         "wheel_odometry.proto"];
-    let dir_proto = Path::new("../proto");
-    let dir_synapse_pb = Path::new("../proto/synapse_pb");
+    let dir_proto = Path::new("proto");
+    let dir_synapse_pb = Path::new("proto/synapse_pb");
     let mut files_abs: Vec<PathBuf> = Vec::new();
     for file in proto_files.iter() {
         let path = dir_synapse_pb.join(file);
