@@ -25,29 +25,9 @@ import "synapse_pb/twist_with_covariance.proto";
 import "synapse_pb/vector3.proto";
 import "synapse_pb/wheel_odometry.proto";
 
-enum Topic {
-	TOPIC_CMD_VEL=0;
-	TOPIC_ODOMETRY=1;
-	TOPIC_INPUT=2;
-	TOPIC_BEZIER_TRAJECTORY=3;
-	TOPIC_IMU=4;
-	TOPIC_MAGNETIC_FIELD=5;
-	TOPIC_NAV_SAT_FIX=6;
-	TOPIC_ALTIMETER=7;
-	TOPIC_ACTUATORS=8;
-	TOPIC_CLOCK_OFFSET=9;
-	TOPIC_BATTERY_STATE=10;
-	TOPIC_WHEEL_ODOMETRY=11;
-	TOPIC_LED_ARRAY=12;
-	TOPIC_STATUS=13;
-	TOPIC_SAFETY=14;
-	TOPIC_UPTIME=15;
-	TOPIC_SIM_CLOCK=63;
-}
 
 message Frame
 {
-	Topic topic = 1;
 	oneof msg
 	{
 		Actuators actuators = 2;
@@ -68,10 +48,16 @@ message Frame
 		Safety safety = 17;
 		SimClock sim_clock = 18;
 		Status status = 19;
-		Time time = 20;
-		Twist twist = 21;
-		TwistWithCovariance twist_with_covariance = 22;
-		Vector3 vector3 = 23;
-		WheelOdometry wheel_odometry = 24;
+		Time clock_offset = 20;
+		Time uptime = 21;
+		Twist cmd_vel = 22;
+		TwistWithCovariance twist_with_covariance = 23;
+		Vector3 accel_raw_0 = 24;
+		Vector3 accel_raw_1 = 25;
+		Vector3 accel_raw_2 = 26;
+		Vector3 gyro_raw_0 = 27;
+		Vector3 gyro_raw_1 = 28;
+		Vector3 gyro_raw_2 = 29;
+		WheelOdometry wheel_odometry = 30;
 	}
 }
