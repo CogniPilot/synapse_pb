@@ -1,1 +1,6 @@
+synapse_pb.BezierTrajectory.Curve.x max_count:8
+synapse_pb.BezierTrajectory.Curve.y max_count:8
+synapse_pb.BezierTrajectory.Curve.z max_count:8
+synapse_pb.BezierTrajectory.Curve.yaw max_count:8
 synapse_pb.BezierTrajectory.curves max_count:8
+synapse_pb.BezierTrajectory.frame_id max_length:32

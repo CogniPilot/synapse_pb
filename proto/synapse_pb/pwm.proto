@@ -1,6 +1,9 @@
 syntax = "proto3";
 package synapse_pb;
 
+import "synapse_pb/timestamp.proto";
+
 message Pwm {
-	repeated uint32 channel = 1;
+	Timestamp timestamp = 1;
+	repeated uint32 channel = 2;
 }

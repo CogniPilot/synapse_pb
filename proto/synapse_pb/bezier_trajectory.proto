@@ -1,12 +1,20 @@
 syntax = "proto3";
 package synapse_pb;
 
-import "synapse_pb/header.proto";
-import "synapse_pb/bezier_curve.proto";
+import "synapse_pb/timestamp.proto";
 
 message BezierTrajectory
 {
-  Header header               = 1;
-  uint64 time_start           = 2;
-  repeated BezierCurve curves = 3;
+	message Curve
+	{
+		Timestamp time_stop       = 1;
+		repeated double x         = 2;
+		repeated double y         = 3;
+		repeated double z         = 4;
+		repeated double yaw       = 5;
+  	}
+	Timestamp stamp = 1;
+	string frame_id = 2;
+	Timestamp time_start        = 3;
+	repeated Curve curves = 4;
 }

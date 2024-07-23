@@ -1,0 +1,26 @@
+syntax = "proto3";
+package synapse_pb;
+
+message Covariance6 {
+	double x_x = 1;
+	double x_y = 2;
+	double x_z = 3;
+	double x_rx = 4;
+	double x_ry = 5;
+	double x_rz = 6;
+	double y_y = 7;
+	double y_z = 8;
+	double y_rx = 9;
+	double y_ry = 10;
+	double y_rz = 11;
+	double z_z = 12;
+	double z_rx = 13;
+	double z_ry = 14;
+	double z_rz = 15;
+	double rx_rx = 16;
+	double rx_ry = 17;
+	double rx_rz = 18;
+	double ry_ry = 19;
+	double ry_rz = 20;
+	double rz_rz = 21;
+};

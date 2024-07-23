@@ -1,33 +1,30 @@
 set(PROTO_FILES
-    synapse_pb/frame.proto
     synapse_pb/actuators.proto
     synapse_pb/altimeter.proto
     synapse_pb/battery_state.proto
-    synapse_pb/bezier_curve.proto
     synapse_pb/bezier_trajectory.proto
-    synapse_pb/bit32_flag.proto
-    synapse_pb/can.proto
-    synapse_pb/header.proto
+    synapse_pb/clock_offset.proto
+    synapse_pb/covariance3.proto
+    synapse_pb/covariance6.proto
+    synapse_pb/duration.proto
+    synapse_pb/frame.proto
     synapse_pb/imu.proto
     synapse_pb/input.proto
-    synapse_pb/led.proto
     synapse_pb/led_array.proto
     synapse_pb/magnetic_field.proto
     synapse_pb/nav_sat_fix.proto
-    synapse_pb/nav_sat_status.proto
     synapse_pb/odometry.proto
-    synapse_pb/point.proto
     synapse_pb/pose.proto
-    synapse_pb/pose_with_covariance.proto
     synapse_pb/pwm.proto
     synapse_pb/quaternion.proto
     synapse_pb/safety.proto
     synapse_pb/sim_clock.proto
     synapse_pb/status.proto
-    synapse_pb/time.proto
+    synapse_pb/timestamp.proto
     synapse_pb/twist.proto
-    synapse_pb/twist_with_covariance.proto
+    synapse_pb/uptime.proto
     synapse_pb/vector3.proto
+    synapse_pb/vector3_array.proto
     synapse_pb/wheel_odometry.proto
     )
 

@@ -1,15 +1,33 @@
 syntax = "proto3";
 package synapse_pb;
 
-import "synapse_pb/header.proto";
-import "synapse_pb/nav_sat_status.proto";
+import "synapse_pb/timestamp.proto";
+import "synapse_pb/covariance3.proto";
 
 message NavSatFix {
-	Header header = 1;
-	NavSatStatus status = 2;
-	double latitude = 3;
-	double longitude = 4;
-	double altitude = 5;
-	repeated double position_covariance = 6;
-	uint32 position_covariance_type = 7;
+	message Status
+	{
+	  int32 status          = 1;
+	  uint32 service        = 2;
+	}
+	enum Frame {
+		WGS_84=0;
+		PZ_90=1;
+		GTRF=2;
+		BDC=3;
+	}
+	enum CovarianceType {
+		UNKNOWN=0;
+		APPROXIMATED=1;
+		DIAGONAL_KNOWN=2;
+		KNOWN=3;
+	}
+	Timestamp stamp = 1;
+	Frame frame = 2;
+	Status status = 3;
+	double latitude = 4;
+	double longitude = 5;
+	double altitude = 6;
+	Covariance3 position_covariance = 7;
+	CovarianceType position_covariance_type = 8;
 }

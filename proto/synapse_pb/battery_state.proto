@@ -1,7 +1,7 @@
 syntax = "proto3";
 package synapse_pb;
 
-import "synapse_pb/header.proto";
+import "synapse_pb/timestamp.proto";
 
 // see https://github.com/ros2/common_interfaces/blob/rolling/sensor_msgs/msg/BatteryState.msg
  
@@ -35,7 +35,7 @@ message BatteryState {
 		TERNARY=7;
 		VRLA=8;
 	}
-	Header header = 1;
+	Timestamp stamp = 1;
 	double voltage = 2;          // Voltage in Volts (Mandatory)
 	double temperature = 3;      // Temperature in Degrees Celsius (If unmeasured NaN)
 	double current = 4;          // Negative when discharging (A)  (If unmeasured NaN)

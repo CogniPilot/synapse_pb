@@ -1,13 +1,14 @@
 syntax = "proto3";
 package synapse_pb;
 
-import "synapse_pb/header.proto";
-import "synapse_pb/pose_with_covariance.proto";
-import "synapse_pb/twist_with_covariance.proto";
+import "synapse_pb/timestamp.proto";
+import "synapse_pb/pose.proto";
+import "synapse_pb/twist.proto";
 
 message Odometry {
-	Header header = 1;
-	string child_frame_id = 2;
-	PoseWithCovariance pose = 3;
-	TwistWithCovariance twist = 4;
+	Timestamp stamp = 1;
+	string frame_id = 2;
+	string child_frame_id = 3;
+	Pose pose = 4;
+	Twist twist = 5;
 }

@@ -1,6 +1,9 @@
 syntax = "proto3";
 package synapse_pb;
 
+import "synapse_pb/timestamp.proto";
+
 message Input {
-	repeated float channel = 1;
+	Timestamp timestamp = 1;
+	repeated float channel = 2;
 }

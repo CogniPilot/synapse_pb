@@ -1,7 +1,7 @@
 syntax = "proto3";
 package synapse_pb;
 
-import "synapse_pb/header.proto";
+import "synapse_pb/timestamp.proto";
 
 message Status {
 
@@ -115,7 +115,7 @@ message Status {
 		FLAG_RESERVED_29=1073741824;
 	}
 
-	Header header = 1;
+	Timestamp stamp = 1;
 	Arming arming = 2;
 	string status_message = 3;
 	LinkStatus input_status = 4;

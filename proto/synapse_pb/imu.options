@@ -1,3 +1,4 @@
+synapse_pb.Imu.frame_id max_length:32
 synapse_pb.Imu.orientation_covariance max_count:9
 synapse_pb.Imu.angular_velocity_covariance max_count:9
 synapse_pb.Imu.linear_acceleration_covariance max_count:9

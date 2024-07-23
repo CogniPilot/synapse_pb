@@ -5,7 +5,7 @@ import "synapse_pb/actuators.proto";
 import "synapse_pb/altimeter.proto";
 import "synapse_pb/battery_state.proto";
 import "synapse_pb/bezier_trajectory.proto";
-import "synapse_pb/can.proto";
+import "synapse_pb/clock_offset.proto";
 import "synapse_pb/imu.proto";
 import "synapse_pb/input.proto";
 import "synapse_pb/led_array.proto";
@@ -13,51 +13,48 @@ import "synapse_pb/magnetic_field.proto";
 import "synapse_pb/nav_sat_fix.proto";
 import "synapse_pb/odometry.proto";
 import "synapse_pb/pose.proto";
-import "synapse_pb/pose_with_covariance.proto";
 import "synapse_pb/pwm.proto";
 import "synapse_pb/quaternion.proto";
 import "synapse_pb/safety.proto";
 import "synapse_pb/sim_clock.proto";
 import "synapse_pb/status.proto";
-import "synapse_pb/time.proto";
 import "synapse_pb/twist.proto";
-import "synapse_pb/twist_with_covariance.proto";
+import "synapse_pb/uptime.proto";
 import "synapse_pb/vector3.proto";
+import "synapse_pb/vector3_array.proto";
 import "synapse_pb/wheel_odometry.proto";
-
 
 message Frame
 {
 	oneof msg
 	{
-		Actuators actuators = 2;
-		Altimeter alitimeter = 3;
-		BatteryState battery_state = 4;
-		BezierTrajectory bezier_trajectory = 5;
-		Can can = 6;
-		Imu imu = 7;
-		Input input = 8;
-		LEDArray led_array = 9;
-		MagneticField magnetic_field = 10;
-		NavSatFix nav_sat_fix = 11;
-		Odometry odometry = 12;
-		Pose pose = 13;
-		PoseWithCovariance pose_with_covariance = 14;
-		Pwm pwm = 15;
-		Quaternion quaternion = 16;
-		Safety safety = 17;
-		SimClock sim_clock = 18;
-		Status status = 19;
-		Time clock_offset = 20;
-		Time uptime = 21;
-		Twist cmd_vel = 22;
-		TwistWithCovariance twist_with_covariance = 23;
-		Vector3 accel_raw_0 = 24;
-		Vector3 accel_raw_1 = 25;
-		Vector3 accel_raw_2 = 26;
-		Vector3 gyro_raw_0 = 27;
-		Vector3 gyro_raw_1 = 28;
-		Vector3 gyro_raw_2 = 29;
-		WheelOdometry wheel_odometry = 30;
+		// these are functioning as typed topics
+		// the name of the field is the topic name
+		Actuators actuators = 1;
+		Altimeter alitimeter = 2;
+		BatteryState battery_state = 3;
+		BezierTrajectory bezier_trajectory = 4;
+		ClockOffset clock_offset = 5;
+		Imu imu = 6;
+		Input input = 7;
+		LEDArray led_array = 8;
+		MagneticField magnetic_field = 9;
+		NavSatFix nav_sat_fix = 10;
+		Odometry odometry = 11;
+		Pose pose = 12;
+		Pwm pwm = 13;
+		Quaternion quaternion = 14;
+		Safety safety = 15;
+		SimClock sim_clock = 16;
+		Status status = 17;
+		Twist cmd_vel = 18;
+		Uptime uptime = 19;
+		Vector3Array accel_array_0 = 20;
+		Vector3Array accel_array_1 = 21;
+		Vector3Array accel_array_2 = 22;
+		Vector3Array gyro_array_0 = 23;
+		Vector3Array gyro_array_1 = 24;
+		Vector3Array gyro_array_2 = 25;
+		WheelOdometry wheel_odometry = 26;
 	}
 }
