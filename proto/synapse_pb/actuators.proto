@@ -1,12 +1,10 @@
 syntax = "proto3";
 package synapse_pb;
 
-import "synapse_pb/header.proto";
-
-// see https://github.com/rudislabs/actuator_msgs/blob/main/msg/Actuators.msg
+import "synapse_pb/timestamp.proto";
 
 message Actuators {
-	Header header = 1;
+	Timestamp stamp = 1;
 	repeated double position = 2;
 	repeated double velocity = 3;
 	repeated double normalized = 4;

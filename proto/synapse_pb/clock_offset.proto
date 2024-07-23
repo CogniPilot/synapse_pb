@@ -2,8 +2,10 @@ syntax = "proto3";
 package synapse_pb;
 
 import "synapse_pb/timestamp.proto";
+import "synapse_pb/duration.proto";
 
-message WheelOdometry {
+message ClockOffset
+{
 	Timestamp stamp = 1;
-	double rotation = 2;
+	Duration offset = 2;
 }

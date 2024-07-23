@@ -1,1 +1,2 @@
+synapse_pb.Odometry.frame_id max_length:32
 synapse_pb.Odometry.child_frame_id max_length:32

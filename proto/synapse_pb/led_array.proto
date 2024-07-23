@@ -1,11 +1,17 @@
 syntax = "proto3";
 package synapse_pb;
 
-import "synapse_pb/header.proto";
-import "synapse_pb/led.proto";
+import "synapse_pb/timestamp.proto";
 
 message LEDArray
 {
-  Header header = 1;
-  repeated LED led = 2;
+	message LED
+	{
+		uint32 index = 1;
+		uint32 r = 2;
+		uint32 g = 3;
+		uint32 b = 4;
+	}
+	Timestamp stamp = 1;
+	repeated LED led = 2;
 }
