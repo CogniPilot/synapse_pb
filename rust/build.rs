@@ -19,6 +19,7 @@ fn main() -> std::io::Result<()> {
         "duration.proto",
         "frame.proto",
         "imu.proto",
+        "imu_q31_array.proto",
         "input.proto",
         "led_array.proto",
         "magnetic_field.proto",
@@ -34,7 +35,6 @@ fn main() -> std::io::Result<()> {
         "twist.proto",
         "uptime.proto",
         "vector3.proto",
-        "vector3_array.proto",
         "wheel_odometry.proto"];
     let dir_proto = Path::new("proto");
     let dir_synapse_pb = Path::new("proto/synapse_pb");

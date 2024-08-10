@@ -7,6 +7,7 @@ import "synapse_pb/battery_state.proto";
 import "synapse_pb/bezier_trajectory.proto";
 import "synapse_pb/clock_offset.proto";
 import "synapse_pb/imu.proto";
+import "synapse_pb/imu_q31_array.proto";
 import "synapse_pb/input.proto";
 import "synapse_pb/led_array.proto";
 import "synapse_pb/magnetic_field.proto";
@@ -20,7 +21,6 @@ import "synapse_pb/sim_clock.proto";
 import "synapse_pb/status.proto";
 import "synapse_pb/twist.proto";
 import "synapse_pb/uptime.proto";
-import "synapse_pb/vector3_array.proto";
 import "synapse_pb/wheel_odometry.proto";
 
 message Frame
@@ -29,6 +29,8 @@ message Frame
 	{
 		// these are functioning as typed topics
 		// the name of the field is the topic name
+		// renumbering should be minimized for
+		// backward compatability
 		Actuators actuators = 1;
 		Altimeter alitimeter = 2;
 		BatteryState battery_state = 3;
@@ -48,12 +50,9 @@ message Frame
 		Status status = 17;
 		Twist cmd_vel = 18;
 		Uptime uptime = 19;
-		Vector3Array accel_array_0 = 20;
-		Vector3Array accel_array_1 = 21;
-		Vector3Array accel_array_2 = 22;
-		Vector3Array gyro_array_0 = 23;
-		Vector3Array gyro_array_1 = 24;
-		Vector3Array gyro_array_2 = 25;
-		WheelOdometry wheel_odometry = 26;
+		WheelOdometry wheel_odometry = 20;
+		ImuQ31Array imu_0 = 21;
+		ImuQ31Array imu_1 = 22;
+		ImuQ31Array imu_2 = 23;
 	}
 }

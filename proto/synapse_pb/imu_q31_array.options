@@ -1,0 +1,4 @@
+synapse_pb.ImuQ31Array.frame max_count:128
+synapse_pb.ImuQ31Array.gyro_shift int_size:IS_8
+synapse_pb.ImuQ31Array.accel_shift int_size:IS_8
+synapse_pb.ImuQ31Array.temp_shift int_size:IS_8

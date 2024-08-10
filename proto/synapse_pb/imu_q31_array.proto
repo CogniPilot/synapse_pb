@@ -1,0 +1,22 @@
+syntax = "proto3";
+package synapse_pb;
+
+import "synapse_pb/timestamp.proto";
+
+message ImuQ31Array {
+	Timestamp stamp = 1;
+	int32 gyro_shift = 2;
+	int32 accel_shift = 3;
+	int32 temp_shift = 4;
+	message Frame {
+		int32 delta_nanos = 1;
+		int32 gyro_x = 2; 
+		int32 gyro_y = 3; 
+		int32 gyro_z = 4;
+		int32 accel_x = 5; 
+		int32 accel_y = 6; 
+		int32 accel_z = 7;
+		int32 temp = 8;
+	}
+	repeated Frame frame = 5;
+}

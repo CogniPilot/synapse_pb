@@ -13,6 +13,7 @@ proto_files = [
     "duration.proto",
     "frame.proto",
     "imu.proto",
+    "imu_q31.proto",
     "input.proto",
     "led_array.proto",
     "magnetic_field.proto",
@@ -28,7 +29,6 @@ proto_files = [
     "twist.proto",
     "uptime.proto",
     "vector3.proto",
-    "vector3_array.proto",
     "wheel_odometry.proto"];
 
 dir_root = Path("../")
