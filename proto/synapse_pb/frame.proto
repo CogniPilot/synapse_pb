@@ -20,7 +20,6 @@ import "synapse_pb/sim_clock.proto";
 import "synapse_pb/status.proto";
 import "synapse_pb/twist.proto";
 import "synapse_pb/uptime.proto";
-import "synapse_pb/vector3.proto";
 import "synapse_pb/vector3_array.proto";
 import "synapse_pb/wheel_odometry.proto";
 
