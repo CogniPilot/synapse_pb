@@ -9,7 +9,7 @@ set(PROTO_FILES
     synapse_pb/duration.proto
     synapse_pb/frame.proto
     synapse_pb/imu.proto
-    synapse_pb/imu_q31.proto
+    synapse_pb/imu_q31_array.proto
     synapse_pb/input.proto
     synapse_pb/led_array.proto
     synapse_pb/magnetic_field.proto
