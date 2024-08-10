@@ -26,6 +26,7 @@ set(PROTO_FILES
     ${PROTO_DIR}/duration.proto
     ${PROTO_DIR}/frame.proto
     ${PROTO_DIR}/imu.proto
+    ${PROTO_DIR}/imu_q31_array.proto
     ${PROTO_DIR}/input.proto
     ${PROTO_DIR}/led_array.proto
     ${PROTO_DIR}/magnetic_field.proto
@@ -41,7 +42,6 @@ set(PROTO_FILES
     ${PROTO_DIR}/twist.proto
     ${PROTO_DIR}/uptime.proto
     ${PROTO_DIR}/vector3.proto
-    ${PROTO_DIR}/vector3_array.proto
     ${PROTO_DIR}/wheel_odometry.proto
     )
 
