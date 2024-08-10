@@ -1,2 +1,5 @@
 /target
 rust/target
+python/synapse_pb
+python/dist
+.ipynb_checkpoints/
