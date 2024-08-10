@@ -9,6 +9,7 @@ set(PROTO_FILES
     synapse_pb/duration.proto
     synapse_pb/frame.proto
     synapse_pb/imu.proto
+    synapse_pb/imu_q31.proto
     synapse_pb/input.proto
     synapse_pb/led_array.proto
     synapse_pb/magnetic_field.proto
@@ -24,7 +25,6 @@ set(PROTO_FILES
     synapse_pb/twist.proto
     synapse_pb/uptime.proto
     synapse_pb/vector3.proto
-    synapse_pb/vector3_array.proto
     synapse_pb/wheel_odometry.proto
     )
 
