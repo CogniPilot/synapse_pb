@@ -33,7 +33,6 @@ fn main() -> std::io::Result<()> {
         "status.proto",
         "timestamp.proto",
         "twist.proto",
-        "uptime.proto",
         "vector3.proto",
         "wheel_odometry.proto"];
     let dir_proto = Path::new("proto");

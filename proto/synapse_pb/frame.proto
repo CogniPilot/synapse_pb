@@ -6,6 +6,9 @@ import "synapse_pb/altimeter.proto";
 import "synapse_pb/battery_state.proto";
 import "synapse_pb/bezier_trajectory.proto";
 import "synapse_pb/clock_offset.proto";
+import "synapse_pb/covariance3.proto";
+import "synapse_pb/covariance6.proto";
+import "synapse_pb/duration.proto";
 import "synapse_pb/imu.proto";
 import "synapse_pb/imu_q31_array.proto";
 import "synapse_pb/input.proto";
@@ -20,39 +23,49 @@ import "synapse_pb/safety.proto";
 import "synapse_pb/sim_clock.proto";
 import "synapse_pb/status.proto";
 import "synapse_pb/twist.proto";
-import "synapse_pb/uptime.proto";
+import "synapse_pb/vector3.proto";
 import "synapse_pb/wheel_odometry.proto";
 
 message Frame
 {
+	string topic = 1;
+
 	oneof msg
 	{
-		// these are functioning as typed topics
-		// the name of the field is the topic name
-		// renumbering should be minimized for
-		// backward compatability
-		Actuators actuators = 1;
-		Altimeter alitimeter = 2;
-		BatteryState battery_state = 3;
-		BezierTrajectory bezier_trajectory = 4;
-		ClockOffset clock_offset = 5;
-		Imu imu = 6;
-		Input input = 7;
-		LEDArray led_array = 8;
-		MagneticField magnetic_field = 9;
-		NavSatFix nav_sat_fix = 10;
-		Odometry odometry = 11;
-		Pose pose = 12;
-		Pwm pwm = 13;
-		Quaternion quaternion = 14;
-		Safety safety = 15;
-		SimClock sim_clock = 16;
-		Status status = 17;
-		Twist cmd_vel = 18;
-		Uptime uptime = 19;
-		WheelOdometry wheel_odometry = 20;
-		ImuQ31Array imu_0 = 21;
-		ImuQ31Array imu_1 = 22;
-		ImuQ31Array imu_2 = 23;
+		// status / estimation
+		Status status = 2;
+		Safety safety = 3;
+		BatteryState battery_state = 4;
+		Odometry estimator_odometry = 5;
+
+		// timing
+		ClockOffset clock_offset = 10;
+		Duration duration = 11;
+
+		// command
+		BezierTrajectory bezier_trajectory = 20;
+		Input input = 21;
+
+		// actuation
+		Actuators actuators = 30;
+		Pwm pwm = 31;
+		LEDArray led_array = 32;
+
+		// generic
+		Pose pose = 40;
+		Quaternion quaternion = 41;
+		Twist twist = 42;
+		Vector3 vector3 = 43;
+
+		// sensors
+		Altimeter alitimeter = 60;
+		MagneticField magnetic_field = 61;
+		Imu imu = 62;
+		ImuQ31Array imu_q31_array = 63;
+		NavSatFix nav_sat_fix = 64;
+		WheelOdometry wheel_odometry = 65;
+
+		// simulation
+		SimClock sim_clock = 70;
 	}
 }

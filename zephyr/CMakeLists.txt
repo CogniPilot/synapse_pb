@@ -40,7 +40,6 @@ set(PROTO_FILES
     ${PROTO_DIR}/status.proto
     ${PROTO_DIR}/timestamp.proto
     ${PROTO_DIR}/twist.proto
-    ${PROTO_DIR}/uptime.proto
     ${PROTO_DIR}/vector3.proto
     ${PROTO_DIR}/wheel_odometry.proto
     )

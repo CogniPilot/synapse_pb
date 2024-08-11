@@ -27,7 +27,6 @@ proto_files = [
     "status.proto",
     "timestamp.proto",
     "twist.proto",
-    "uptime.proto",
     "vector3.proto",
     "wheel_odometry.proto"];
 
