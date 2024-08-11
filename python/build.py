@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import subprocess
+import shutil
 from pathlib import Path
 
 proto_files = [
@@ -13,7 +14,7 @@ proto_files = [
     "duration.proto",
     "frame.proto",
     "imu.proto",
-    "imu_q31.proto",
+    "imu_q31_array.proto",
     "input.proto",
     "led_array.proto",
     "magnetic_field.proto",
@@ -32,7 +33,11 @@ proto_files = [
 
 dir_root = Path("../")
 dir_python = Path(__file__).resolve().parent
-dir_python.mkdir(parents=True, exist_ok=True)
+dir_python_module_dir = dir_python / "synapse_pb"
+
+if dir_python_module_dir.is_dir():
+    shutil.rmtree(dir_python_module_dir)
+dir_python_module_dir.mkdir(parents=True, exist_ok=True)
 
 dir_proto = dir_root / "proto"
 dir_synapse_msgs = dir_proto / "synapse_pb"

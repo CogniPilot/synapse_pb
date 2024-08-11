@@ -1,6 +1,6 @@
 [package]
 name = "synapse_pb"
-version = "0.2.9"
+version = "0.2.10"
 edition = "2021"
 license = "Apache-2.0"
 description = "Protobuf messages for CogniPilot Synapse"
