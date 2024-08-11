@@ -6,8 +6,6 @@ import "synapse_pb/altimeter.proto";
 import "synapse_pb/battery_state.proto";
 import "synapse_pb/bezier_trajectory.proto";
 import "synapse_pb/clock_offset.proto";
-import "synapse_pb/covariance3.proto";
-import "synapse_pb/covariance6.proto";
 import "synapse_pb/duration.proto";
 import "synapse_pb/imu.proto";
 import "synapse_pb/imu_q31_array.proto";
@@ -36,7 +34,7 @@ message Frame
 		Status status = 2;
 		Safety safety = 3;
 		BatteryState battery_state = 4;
-		Odometry estimator_odometry = 5;
+		Odometry odometry = 5;
 
 		// timing
 		ClockOffset clock_offset = 10;
