@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "synapse_pb"
-version = "0.2.8"
+version = "0.2.9"
 description = ""
 authors = ["James Goppert <james.goppert@gmail.com>"]
 license = "Apache 2.0"
