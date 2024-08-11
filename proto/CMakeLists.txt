@@ -23,7 +23,6 @@ set(PROTO_FILES
     synapse_pb/status.proto
     synapse_pb/timestamp.proto
     synapse_pb/twist.proto
-    synapse_pb/uptime.proto
     synapse_pb/vector3.proto
     synapse_pb/wheel_odometry.proto
     )
