@@ -56,7 +56,7 @@ message Frame
 		Vector3 vector3 = 43;
 
 		// sensors
-		Altimeter alitimeter = 60;
+		Altimeter altimeter = 60;
 		MagneticField magnetic_field = 61;
 		Imu imu = 62;
 		ImuQ31Array imu_q31_array = 63;
