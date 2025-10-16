@@ -1,7 +1,10 @@
 syntax = "proto3";
 package synapse_pb;
 
+import "synapse_pb/timestamp.proto";
+
 message Vector3 {
+	Timestamp stamp = 1;
 	double x = 2; 
 	double y = 3; 
 	double z = 4; 
