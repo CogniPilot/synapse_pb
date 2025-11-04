@@ -8,5 +8,5 @@ message Quaternion {
 	double x = 2;
 	double y = 3;
 	double z = 4;
-	double w = 5 [default=1];
+	double w = 5;
 }
