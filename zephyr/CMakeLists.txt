@@ -59,5 +59,6 @@ zephyr_include_directories(
 
 # necessary for module to calll nanopb_generate
 add_dependencies(app synapse_pb)
+add_dependencies(synapse_pb nanopb_generated_headers)
 
 endif()
