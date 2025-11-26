@@ -23,6 +23,7 @@ set(PROTO_FILES
     ${PROTO_DIR}/clock_offset.proto
     ${PROTO_DIR}/covariance3.proto
     ${PROTO_DIR}/covariance6.proto
+    ${PROTO_DIR}/distance.proto
     ${PROTO_DIR}/duration.proto
     ${PROTO_DIR}/frame.proto
     ${PROTO_DIR}/imu.proto

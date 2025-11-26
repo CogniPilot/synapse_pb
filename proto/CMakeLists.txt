@@ -6,6 +6,7 @@ set(PROTO_FILES
     synapse_pb/clock_offset.proto
     synapse_pb/covariance3.proto
     synapse_pb/covariance6.proto
+    synapse_pb/distance.proto
     synapse_pb/duration.proto
     synapse_pb/frame.proto
     synapse_pb/imu.proto

@@ -16,6 +16,7 @@ fn main() -> std::io::Result<()> {
         "clock_offset.proto",
         "covariance3.proto",
         "covariance6.proto",
+        "distance.proto",
         "duration.proto",
         "frame.proto",
         "imu.proto",
