@@ -1,0 +1,3 @@
+synapse_pb.ArgusResultsDebug.data max_count:33
+synapse_pb.ArgusResultsDebug.ArgusXTalk.x_talk_predictor max_count:2
+synapse_pb.ArgusResultsDebug.ArgusXTalk.x_talk_monitor max_count:4

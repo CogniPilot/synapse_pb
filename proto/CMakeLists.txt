@@ -1,6 +1,12 @@
 set(PROTO_FILES
     synapse_pb/actuators.proto
     synapse_pb/altimeter.proto
+    synapse_pb/argus_measure_frame.proto
+	synapse_pb/argus_pixel.proto
+	synapse_pb/argus_results.proto
+	synapse_pb/argus_results_aux.proto
+	synapse_pb/argus_results_bin.proto
+	synapse_pb/argus_results_debug.proto
     synapse_pb/battery_state.proto
     synapse_pb/bezier_trajectory.proto
     synapse_pb/clock_offset.proto

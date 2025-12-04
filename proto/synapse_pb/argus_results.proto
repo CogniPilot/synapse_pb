@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package synapse_pb;
+
+import "synapse_pb/timestamp.proto";
+import "synapse_pb/argus_measure_frame.proto";
+import "synapse_pb/argus_pixel.proto";
+import "synapse_pb/argus_results_bin.proto";
+import "synapse_pb/argus_results_aux.proto";
+import "synapse_pb/argus_results_debug.proto";
+
+
+message PixelRow {
+  repeated ArgusPixel pixel_row = 1; // Max 4 elements (short edge)
+}
+
+message ArgusResults {
+
+	enum Status {
+		STATUS_OK_IDLE                                = 0;
+    STATUS_IGNORE                                 = 1;
+    STATUS_BUSY                                   = 2;
+    STATUS_INITIALIZING                           = 3;
+    ERROR_FAIL                                    = -1;
+    ERROR_ABORTED                                 = -2;
+    ERROR_READ_ONLY                               = -3;
+    ERROR_OUT_OF_RANGE                            = -4;
+    ERROR_INVALID_ARGUMENT                        = -5;
+    ERROR_TIMEOUT                                 = -6;
+    ERROR_NOT_INITIALIZED                         = -7;
+    ERROR_NOT_SUPPORTED                           = -8;
+    ERROR_NOT_IMPLEMENTED                         = -9;
+    STATUS_S2PI_GPIO_MODE                         = 51;
+    ERROR_S2PI_RX_ERROR                           = -51;
+    ERROR_S2PI_TX_ERROR                           = -52;
+    ERROR_S2PI_INVALID_STATE                      = -53;
+    ERROR_S2PI_INVALID_BAUDRATE                   = -54;
+    ERROR_S2PI_INVALID_SLAVE                      = -55;
+    ERROR_NVM_EMPTY                               = -98;
+    ERROR_NVM_OUT_OF_RANGE                        = -99;
+    STATUS_ARGUS_BUFFER_BUSY                      = 104;
+    STATUS_ARGUS_POWERLIMIT                       = 105;
+    STATUS_ARGUS_PLL_NOT_LOCKED                   = 106;
+    STATUS_ARGUS_NO_OBJECT                        = 108;
+    STATUS_ARGUS_EEPROM_BIT_ERROR                 = 109;
+    STATUS_ARGUS_INVALID_EEPROM                   = 110;
+    ERROR_ARGUS_NOT_CONNECTED                     = -101;
+    ERROR_ARGUS_INVALID_CFG                       = -102;
+    ERROR_ARGUS_BUFFER_EMPTY                      = -103;
+    ERROR_ARGUS_INVALID_SLAVE                     = -104;
+    ERROR_ARGUS_INVALID_MODE                      = -105;
+    ERROR_ARGUS_BIAS_VOLTAGE_REINIT               = -107;
+    ERROR_ARGUS_LASER_MONITOR_INACTIVE            = -108;
+    ERROR_ARGUS_EEPROM_FAILURE                    = -109;
+    ERROR_ARGUS_STALLED                           = -110;
+    ERROR_ARGUS_BGL_EXCEEDANCE                    = -111;
+    ERROR_ARGUS_XTALK_AMPLITUDE_EXCEEDANCE        = -112;
+    ERROR_ARGUS_LASER_FAILURE                     = -113;
+    ERROR_ARGUS_DATA_INTEGRITY_LOST               = -114;
+    ERROR_ARGUS_RANGE_OFFSET_CALIBRATION_FAILED   = -115;
+    ERROR_ARGUS_VSUB_CALIBRATION_FAILED           = -116;
+    ERROR_ARGUS_BUSY                              = -191;
+    ERROR_ARGUS_UNKNOWN_MODULE                    = -199;
+    ERROR_ARGUS_UNKNOWN_CHIP                      = -198;
+    ERROR_ARGUS_UNKNOWN_LASER                     = -197;
+    STATUS_ARGUS_BUSY_TEST                        = 191;
+    STATUS_ARGUS_BUSY_UPDATE                      = 192;
+    STATUS_ARGUS_BUSY_CAL_SEQ                     = 195;
+    STATUS_ARGUS_BUSY_MEAS                        = 196;
+    STATUS_ARGUS_STARTING                         = 100;
+    STATUS_ARGUS_ACTIVE                           = 103;
+  }
+
+  // Header information
+  Timestamp stamp = 1;
+  string frame_id = 2;
+
+  int32 status = 3;
+
+  ArgusMeasureFrame frame = 4;
+
+  Timestamp time_stamp = 5;                 // Time in sec and usec converted to timestamp (sec and nsec)
+                                            // (measured since the last MCU startup/reset) when the measurement was triggered.
+
+  repeated PixelRow pixel_col = 6;              // Max 8 col (long edge), each with max 4 pixels (short edge)
+  ArgusPixel pixel_ref = 7;
+  ArgusResultsBin bin = 8;
+  ArgusResultsAux auxiliary = 9;
+  ArgusResultsDebug debug = 10;
+}

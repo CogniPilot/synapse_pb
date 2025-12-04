@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package synapse_pb;
+
+message ArgusPixel {
+  enum Pixel_Status {
+    PIXEL_STATUS_OK          = 0x00;  // Pixel is ok.
+    PIXEL_STATUS_OFF         = 0x01;  // Pixel was disabled and not read from the device.
+    PIXEL_STATUS_SAT         = 0x02;  // Pixel was saturated.
+    PIXEL_STATUS_BIN_EXCL    = 0x04;  // Pixel was excluded from the 1D result.
+    PIXEL_STATUS_INVALID     = 0x08;  // Pixel data is invalid.
+    PIXEL_STATUS_PREFILTERED = 0x10;  // Pixel was pre-filtered by static mask.
+    PIXEL_STATUS_NO_SIGNAL   = 0x20;  // Pixel has no valid signal.
+    PIXEL_STATUS_OUT_OF_SYNC = 0x40;  // Pixel has lost signal trace.
+    PIXEL_STATUS_STALLED     = 0x80;  // Pixel value is stalled due to errors.
+  }
+
+  float range = 1;                     // Range in meters, raw before calibration (q9.22)
+  float phase = 2;                     // Phase in units of PI (uq1.15)
+  float amplitude = 3;                 // Amplitudes of measured signals in LSB - 0 is Pixel Off, 0xFFFF is Overflow/Error (uq12.4)
+  uint32 status = 4;                   // Pixel status, determines if the pixel is disabled, saturated, etc
+  int32 range_window = 5;              // The unambiguous window determined by the dual frequency feature.
+  float amplitude_raw = 6;             // The raw amplitudes of measured signals in LSB (uq12.4)
+  float uncorrelated_noise = 7;        // The individual pixel uncorrelated noise (EMA averaged over time).
+  float snr = 8;                       // The pixel signal-to-noise ratio.
+}

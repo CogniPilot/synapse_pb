@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package synapse_pb;
+
+message ArgusResultsAux {
+  float vdd = 1;  // VDD ADC channel (uq12.4) Invalid/NotAvailable = 0xFFFFU or 4095.9375 (f32) or NaN
+  float temp = 2; // Temperature sensor ADC channel (q11.4) Invalid/NotAvailable = 0x7FFFU or 2047.9375 (f32) or NaN
+  float vsub = 3; // Substrate Voltage ADC Channel (uq12.4) Invalid/NotAvailable = 0xFFFFU or 4095.9375 (f32) or NaN
+  float vddl = 4; // VDD VCSEL ADC Channel (uq12.4) Invalid/NotAvailable = 0xFFFFU or 4095.9375 (f32) or NaN
+  float iapd = 5; // APD current ADC Channel (uq12.4) Invalid/NotAvailable = 0xFFFFU or 4095.9375 (f32) or NaN
+  float bgl = 6;  // Background Light Value in arbitrary units (uq12.4) estimated by the substrate voltage control
+                  // task Invalid/NotAvailable = 0xFFFFU or 4095.9375 (f32) or NaN
+  float sna = 7;  // Shot Noise Amplitude in LSB units (uq12.4) Invalid/NotAvailable = 0xFFFFU or 4095.9375 (f32) or NaN
+}
