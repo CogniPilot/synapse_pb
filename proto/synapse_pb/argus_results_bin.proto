@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package synapse_pb;
+
+message ArgusResultsBin {
+  float range = 1;           // Raw 1D range value in meter (q9.22) obtained by the Pixel Binning Algorithm
+  float amplitude = 2;       // 1D amplitude in LSB (q12.4) maximum amplitude obtained by the Pixel Binning Algorithm
+  uint32 signal_quality = 3; // Quality metric in percentage 0: n/a, 1: bad, 100: good
+}

@@ -1,0 +1,5 @@
+synapse_pb.ArgusMeasureFrame.digital_integration_depth int_size:IS_16
+synapse_pb.ArgusMeasureFrame.bias_current int_size:IS_8
+synapse_pb.ArgusMeasureFrame.pixel_gain int_size:IS_8
+synapse_pb.ArgusMeasureFrame.pll_offset int_size:IS_8
+synapse_pb.ArgusMeasureFrame.pll_ctrl_cur int_size:IS_8

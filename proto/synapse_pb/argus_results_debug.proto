@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package synapse_pb;
+
+// Crosstalk vector components
+message ArgusXTalk {
+  float dS = 1; // Crosstalk Vector Sine component, Units: LSB (q11.4)
+                // not available: Q11_4_MIN = -2048 (f32)
+
+  float dC = 2; // Crosstalk Vector Cosine component, Units: LSB (q11.4)
+                // not available: Q11_4_MIN = -2048 (f32)
+}
+
+message ArgusResultsDebug {
+  float dca_amplitude = 1; // The amplitude (uq12.4) that is evaluated and used in the DCA module.
+
+  // Raw x-y-sorted ADC results from the device.
+  // The raw data contains the saturation flag which are the two MSBs which
+  // might need to be removed via the 0x3FFFFFU mask:
+  // sample = Data[i] & 0x3FFFFFU;.
+  // Additionally, the values may need to be normalized to a single digital
+  // integration pattern by dividing with the digital integration depth
+  // (see #argus_meas_frame_t.DigitalIntegrationDepth):
+  // sample_normalized = Data[i] / res->Frame.DigitalIntegrationDepth;
+  // Data is arranged as 32-bit values in following order:
+  // index > phase; where index is pixel number n and auxiliary ADC channel.
+  // Note that disabled pixels are skipped.
+  // e.g. [n=0,p=0][n=0,p=1]..[n=0,p=3][n=1,p=0]...[n=1,p=3]...[n=31,p=3]
+  repeated uint32 data = 2; // Max 33 elements
+
+  // The current crosstalk correction values as determined by the
+  // crosstalk predictor algorithm. This is basically the temperature
+  // dependent portion of the crosstalk correction.
+  // Note that there are two values for the upper and lower two rows
+  // respectively.
+  repeated ArgusXTalk x_talk_predictor = 3; // Max 2 elements
+
+  // The current crosstalk correction values as determined by the
+  // crosstalk monitor algorithm. This is a dynamic portion of the
+  // crosstalk correction that is determined by monitoring passive pixels.
+  // Note that the values are valid row-wise.
+  repeated ArgusXTalk x_talk_monitor = 4; // Max 4 elements
+}

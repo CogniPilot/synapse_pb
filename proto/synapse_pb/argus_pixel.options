@@ -1,0 +1,2 @@
+synapse_pb.ArgusPixel.status int_size:IS_8
+synapse_pb.ArgusPixel.range_window int_size:IS_8
