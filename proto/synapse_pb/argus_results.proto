@@ -9,11 +9,6 @@ import "synapse_pb/argus_results_bin.proto";
 import "synapse_pb/argus_results_aux.proto";
 import "synapse_pb/argus_results_debug.proto";
 
-
-message PixelRow {
-  repeated ArgusPixel pixel_row = 1; // Max 4 elements (short edge)
-}
-
 message ArgusResults {
 
 	enum Status {
@@ -82,7 +77,7 @@ message ArgusResults {
   Timestamp time_stamp = 5;                 // Time in sec and usec converted to timestamp (sec and nsec)
                                             // (measured since the last MCU startup/reset) when the measurement was triggered.
 
-  repeated PixelRow pixel_col = 6;              // Max 8 col (long edge), each with max 4 pixels (short edge)
+  repeated ArgusPixel pixel = 6;            // Data of pixel[x][y] flattened for X(8)xY(4) [X0Y0,X0Y1..X0Y3,X1Y0..X1Y3,..X7Y3]
   ArgusPixel pixel_ref = 7;
   ArgusResultsBin bin = 8;
   ArgusResultsAux auxiliary = 9;
