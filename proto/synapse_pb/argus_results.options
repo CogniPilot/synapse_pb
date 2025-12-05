@@ -1,4 +1,3 @@
-synapse_pb.ArgusResults.PixelRow.pixel_row max_count:4
-synapse_pb.ArgusResults.pixel_col max_count:8
+synapse_pb.ArgusResults.pixel max_count:32
 synapse_pb.ArgusResults.frame_id max_length:32
 synapse_pb.ArgusResults.status int_size:IS_16
