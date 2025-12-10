@@ -2,16 +2,17 @@ syntax = "proto3";
 
 package synapse_pb;
 
-// Crosstalk vector components
-message ArgusXTalk {
-  float ds = 1; // Crosstalk Vector Sine component, Units: LSB (q11.4)
-                // not available: Q11_4_MIN = -2048 (f32)
-
-  float dc = 2; // Crosstalk Vector Cosine component, Units: LSB (q11.4)
-                // not available: Q11_4_MIN = -2048 (f32)
-}
-
 message ArgusResultsDebug {
+
+  // Crosstalk vector components
+  message ArgusXTalk {
+    float ds = 1; // Crosstalk Vector Sine component, Units: LSB (q11.4)
+                  // not available: Q11_4_MIN = -2048 (f32)
+
+    float dc = 2; // Crosstalk Vector Cosine component, Units: LSB (q11.4)
+                  // not available: Q11_4_MIN = -2048 (f32)
+  }
+
   float dca_amplitude = 1; // The amplitude (uq12.4) that is evaluated and used in the DCA module.
 
   // Raw x-y-sorted ADC results from the device.
@@ -26,7 +27,7 @@ message ArgusResultsDebug {
   // index > phase; where index is pixel number n and auxiliary ADC channel.
   // Note that disabled pixels are skipped.
   // e.g. [n=0,p=0][n=0,p=1]..[n=0,p=3][n=1,p=0]...[n=1,p=3]...[n=31,p=3]
-  repeated uint32 data = 2; // Max 33 elements
+  repeated uint32 data = 2; // Max 132 elements
 
   // The current crosstalk correction values as determined by the
   // crosstalk predictor algorithm. This is basically the temperature
