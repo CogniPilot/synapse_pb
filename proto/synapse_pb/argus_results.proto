@@ -7,7 +7,6 @@ import "synapse_pb/argus_measure_frame.proto";
 import "synapse_pb/argus_pixel.proto";
 import "synapse_pb/argus_results_bin.proto";
 import "synapse_pb/argus_results_aux.proto";
-import "synapse_pb/argus_results_debug.proto";
 
 message ArgusResults {
 
@@ -81,5 +80,4 @@ message ArgusResults {
   ArgusPixel pixel_ref = 7;
   ArgusResultsBin bin = 8;
   ArgusResultsAux auxiliary = 9;
-  ArgusResultsDebug debug = 10;
 }
