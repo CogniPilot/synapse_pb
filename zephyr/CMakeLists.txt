@@ -18,6 +18,12 @@ zephyr_library_named(synapse_pb)
 set(PROTO_FILES
     ${PROTO_DIR}/actuators.proto
     ${PROTO_DIR}/altimeter.proto
+    ${PROTO_DIR}/argus_measure_frame.proto
+    ${PROTO_DIR}/argus_pixel.proto
+    ${PROTO_DIR}/argus_results.proto
+    ${PROTO_DIR}/argus_results_aux.proto
+    ${PROTO_DIR}/argus_results_bin.proto
+    ${PROTO_DIR}/argus_results_debug.proto
     ${PROTO_DIR}/battery_state.proto
     ${PROTO_DIR}/bezier_trajectory.proto
     ${PROTO_DIR}/clock_offset.proto
@@ -32,6 +38,7 @@ set(PROTO_FILES
     ${PROTO_DIR}/magnetic_field.proto
     ${PROTO_DIR}/nav_sat_fix.proto
     ${PROTO_DIR}/odometry.proto
+    ${PROTO_DIR}/pixart_paa3905.proto
     ${PROTO_DIR}/pose.proto
     ${PROTO_DIR}/pwm.proto
     ${PROTO_DIR}/quaternion.proto

@@ -62,6 +62,8 @@ message Frame
 		ImuQ31Array imu_q31_array = 63;
 		NavSatFix nav_sat_fix = 64;
 		WheelOdometry wheel_odometry = 65;
+		ArgusResults argus_results = 66;
+		PixartPAA3905 pixart_paa3905 = 67;
 
 		// simulation
 		SimClock sim_clock = 70;
