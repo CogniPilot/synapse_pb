@@ -3,6 +3,7 @@ package synapse_pb;
 
 import "synapse_pb/actuators.proto";
 import "synapse_pb/altimeter.proto";
+import "synapse_pb/argus_results.proto";
 import "synapse_pb/battery_state.proto";
 import "synapse_pb/bezier_trajectory.proto";
 import "synapse_pb/clock_offset.proto";
@@ -14,6 +15,7 @@ import "synapse_pb/led_array.proto";
 import "synapse_pb/magnetic_field.proto";
 import "synapse_pb/nav_sat_fix.proto";
 import "synapse_pb/odometry.proto";
+import "synapse_pb/pixart_paa3905.proto";
 import "synapse_pb/pose.proto";
 import "synapse_pb/pwm.proto";
 import "synapse_pb/quaternion.proto";
