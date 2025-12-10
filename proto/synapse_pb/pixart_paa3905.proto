@@ -1,0 +1,33 @@
+syntax = "proto3";
+package synapse_pb;
+
+import "synapse_pb/timestamp.proto";
+
+message PixartPAA3905 {
+	// Mode constants
+	enum Mode {
+		MODE_BRIGHT = 0;
+		MODE_LOW_LIGHT = 1;
+		MODE_SUPER_LOW_LIGHT = 2;
+	}
+
+	// Challenge condition bit masks
+	enum ChallengeMask {
+		CHALLENGE_MASK_NONE = 0x00;
+		CHALLENGE_MASK_3_YAW_GLOSS = 0x04;
+		CHALLENGE_MASK_5_YAW_GLOSS = 0x10;
+		CHALLENGE_MASK_6_CHECKER = 0x20;
+		CHALLENGE_MASK_7_STRIPE = 0x40;
+	}
+
+	Timestamp stamp = 1;
+	string frame_id = 2;
+	bool motion = 3;
+	uint32 mode = 4;
+	int32 delta_x = 5;
+	int32 delta_y = 6;
+	int32 delta_z = 7;
+	uint32 challenge_condition = 8;
+	uint32 squal = 9;
+	uint32 shutter = 10;
+}
