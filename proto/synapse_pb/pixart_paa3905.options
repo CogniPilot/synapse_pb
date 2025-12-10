@@ -1,0 +1,7 @@
+synapse_pb.PixartPAA3905.frame_id max_length:32
+synapse_pb.PixartPAA3905.mode int_size:IS_8
+synapse_pb.PixartPAA3905.delta_x int_size:IS_16
+synapse_pb.PixartPAA3905.delta_y int_size:IS_16
+synapse_pb.PixartPAA3905.delta_z int_size:IS_16
+synapse_pb.PixartPAA3905.challenge_condition int_size:IS_8
+synapse_pb.PixartPAA3905.squal int_size:IS_8

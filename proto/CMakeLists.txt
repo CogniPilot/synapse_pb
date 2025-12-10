@@ -21,6 +21,7 @@ set(PROTO_FILES
     synapse_pb/magnetic_field.proto
     synapse_pb/nav_sat_fix.proto
     synapse_pb/odometry.proto
+    synapse_pb/pixart_paa3905.proto
     synapse_pb/pose.proto
     synapse_pb/pwm.proto
     synapse_pb/quaternion.proto
