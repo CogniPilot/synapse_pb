@@ -1,3 +1,4 @@
+synapse_pb.ArgusResults.frame_id max_length:32
 synapse_pb.ArgusResultsDebug.data max_count:132
 synapse_pb.ArgusResultsDebug.ArgusXTalk.x_talk_predictor max_count:2
 synapse_pb.ArgusResultsDebug.ArgusXTalk.x_talk_monitor max_count:4
