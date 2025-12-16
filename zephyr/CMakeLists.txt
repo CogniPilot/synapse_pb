@@ -42,6 +42,7 @@ set(PROTO_FILES
     ${PROTO_DIR}/pose.proto
     ${PROTO_DIR}/pwm.proto
     ${PROTO_DIR}/quaternion.proto
+    ${PROTO_DIR}/rtcm3.proto
     ${PROTO_DIR}/safety.proto
     ${PROTO_DIR}/sim_clock.proto
     ${PROTO_DIR}/status.proto

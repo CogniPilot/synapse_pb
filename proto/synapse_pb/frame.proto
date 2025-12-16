@@ -19,6 +19,7 @@ import "synapse_pb/pixart_paa3905.proto";
 import "synapse_pb/pose.proto";
 import "synapse_pb/pwm.proto";
 import "synapse_pb/quaternion.proto";
+import "synapse_pb/rtcm3.proto";
 import "synapse_pb/safety.proto";
 import "synapse_pb/sim_clock.proto";
 import "synapse_pb/status.proto";
@@ -69,5 +70,8 @@ message Frame
 
 		// simulation
 		SimClock sim_clock = 70;
+
+		// rtcm3
+		Rtcm3 rtcm3 = 80;
 	}
 }
