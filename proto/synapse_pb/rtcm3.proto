@@ -1,0 +1,6 @@
+syntax = "proto3";
+package synapse_pb;
+
+message Rtcm3 {
+	bytes data = 1;
+}

@@ -35,6 +35,7 @@ fn main() -> std::io::Result<()> {
         "pose.proto",
         "pwm.proto",
         "quaternion.proto",
+        "rtcm3.proto",
         "safety.proto",
         "sim_clock.proto",
         "status.proto",

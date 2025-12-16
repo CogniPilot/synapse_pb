@@ -25,6 +25,7 @@ set(PROTO_FILES
     synapse_pb/pose.proto
     synapse_pb/pwm.proto
     synapse_pb/quaternion.proto
+    synapse_pb/rtcm3.proto
     synapse_pb/safety.proto
     synapse_pb/sim_clock.proto
     synapse_pb/status.proto
